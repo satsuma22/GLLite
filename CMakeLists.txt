@@ -12,10 +12,14 @@ link_directories(
 set(GLLITE_SOURCES 
 	"src/main.cpp"
 	"src/window.cpp"
+	"src/vertexbuffer.cpp"
+	"src/vertexbufferlayout.cpp"
 )
 
 set(GLLITE_HEADERS
 	"src/window.h"
+	"src/vertexbuffer.h"
+	"src/vertexbufferlayout.h"
 )
 
 add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS})
