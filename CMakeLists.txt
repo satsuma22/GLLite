@@ -15,6 +15,7 @@ set(GLLITE_SOURCES
 	"src/vertexbuffer.cpp"
 	"src/vertexbufferlayout.cpp"
 	"src/vertexarray.cpp"
+	"src/shader.cpp"
 )
 
 set(GLLITE_HEADERS
@@ -22,6 +23,7 @@ set(GLLITE_HEADERS
 	"src/vertexbuffer.h"
 	"src/vertexbufferlayout.h"
 	"src/vertexarray.h"
+	"src/shader.h"
 )
 
 add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS})
