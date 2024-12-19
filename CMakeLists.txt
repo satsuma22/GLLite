@@ -14,12 +14,14 @@ set(GLLITE_SOURCES
 	"src/window.cpp"
 	"src/vertexbuffer.cpp"
 	"src/vertexbufferlayout.cpp"
+	"src/vertexarray.cpp"
 )
 
 set(GLLITE_HEADERS
 	"src/window.h"
 	"src/vertexbuffer.h"
 	"src/vertexbufferlayout.h"
+	"src/vertexarray.h"
 )
 
 add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS})
