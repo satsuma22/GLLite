@@ -9,11 +9,24 @@ link_directories(
 	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glfw/lib-vc2022/"
 )
 
-add_executable(GLLite "src/main.cpp")
+set(GLLITE_SOURCES 
+	"src/main.cpp"
+	"src/window.cpp"
+)
+
+set(GLLITE_HEADERS
+	"src/window.h"
+)
+
+add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS})
 
 target_include_directories(GLLite PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glew/include"
 	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glfw/include"
+)
+
+target_compile_definitions(GLLite PRIVATE
+	"GLEW_STATIC"
 )
 
 target_link_libraries(GLLite PRIVATE

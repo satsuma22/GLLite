@@ -1,13 +1,14 @@
-#include <iostream>
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "window.h"
 
 int main()
 {
-	if (!glfwInit())
+	Window window(800, 600, "OpenGL");
+
+	while (!window.IsClosed())
 	{
-		std::cerr << "Failed to initialize GLFW" << std::endl;
-		return -1;
+		window.Clear();
+		window.Update();
 	}
 
+	return 0;
 }
