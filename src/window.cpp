@@ -72,16 +72,19 @@ void Window::Create()
 		exit(-1);
 	}
 	glfwMakeContextCurrent(m_window);
-	glewExperimental = GL_TRUE;
+	//glewExperimental = GL_TRUE;
 	if (glewInit() != GLEW_OK)
 	{
 		std::cerr << "Failed to initialize GLEW" << std::endl;
 		exit(-1);
 	}
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+	std::cout << glGetString(GL_VERSION) << std::endl;
+
+	glClearColor(.8f, .8f, .8f, 1.0f);
 	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glCullFace(GL_BACK);
+	//glEnable(GL_CULL_FACE);
+	//glCullFace(GL_BACK);
 }
 
 // Destroy the window

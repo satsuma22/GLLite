@@ -28,7 +28,12 @@ set(GLLITE_HEADERS
 	"src/texture.h"
 )
 
-add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS})
+set(GLLITE_SHADERS
+	"src/glsl/basic.glvs"
+	"src/glsl/basic.glfs"
+)
+
+add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS} ${GLLITE_SHADERS})
 
 target_include_directories(GLLite PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glew/include"

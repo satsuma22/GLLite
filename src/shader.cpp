@@ -60,14 +60,14 @@ ShaderProgramSource Shader::ParseShader() const
 	for (auto& directory : ShaderDirectories)
 	{
 		VSFile.open(directory + m_VSFilePath);
-
+		std::cout << "Trying to open " << directory + m_VSFilePath << std::endl;
 		if (VSFile.is_open()) break;
 	}
 
 	if (!VSFile.is_open())
 	{
 		std::cout << "Could not find Shader Source in " << m_VSFilePath << std::endl;
-		std::cin.get();
+		//std::cin.get();
 		exit(-1);
 	}
 
@@ -135,6 +135,14 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 	glAttachShader(program, fs);
 	glLinkProgram(program);
 	glValidateProgram(program);
+
+	char infoLog[512];
+	int success;
+
+	glGetProgramiv(program, GL_LINK_STATUS, &success);
+	if (!success) {
+		glGetProgramInfoLog(program, 512, NULL, infoLog);
+	}
 
 	glDeleteShader(vs);
 	glDeleteShader(fs);
