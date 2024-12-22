@@ -9,7 +9,8 @@ link_directories(
 
 add_executable(hello_triangle main.cpp)
 
-if (${BUILD_SHARED_LIB})
+if (BUILD_SHARED_LIB)
+	message(STATUS "Setting SHARED=ON for hello_triangle")
 	target_compile_definitions(hello_triangle PRIVATE GLLITE_SHARED)
 endif()
 

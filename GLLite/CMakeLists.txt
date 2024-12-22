@@ -10,7 +10,7 @@ link_directories(
 )
 
 message(STATUS "GLFW lib dir: ${CMAKE_SOURCE_DIR}/3rd/glfw/lib-vc2022/")
-message(STATUS "GLEW lib dir: {CMAKE_SOURCE_DIR}/3rd/glew/lib/Release/x64/")
+message(STATUS "GLEW lib dir: ${CMAKE_SOURCE_DIR}/3rd/glew/lib/Release/x64/")
 
 set(GLLITE_SOURCES 
 	"src/window.cpp"
@@ -19,6 +19,7 @@ set(GLLITE_SOURCES
 	"src/vertexarray.cpp"
 	"src/shader.cpp"
 	"src/texture.cpp"
+	"src/indexarray.cpp"
 )
 
 set(GLLITE_HEADERS
@@ -28,6 +29,7 @@ set(GLLITE_HEADERS
 	"include/vertexarray.h"
 	"include/shader.h"
 	"include/texture.h"
+	"include/indexarray.h"
 	"include/utils.h"
 )
 
@@ -38,7 +40,7 @@ set(GLLITE_SHADERS
 
 set(GLLITE_BUILD_SHARED ${BUILD_SHARED_LIB})
 
-if (${GLLITE_BUILD_SHARED})
+if (GLLITE_BUILD_SHARED)
 	message(STATUS "BUILDING SHARED LIBRARY FOR GLLITE")
 	add_library(GLLite SHARED ${GLLITE_SOURCES} ${GLLITE_HEADERS} ${GLLITE_SHADERS})
 	target_compile_definitions(GLLite PRIVATE "GLLITE_EXPORTS" "GLLITE_SHARED")
