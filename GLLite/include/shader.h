@@ -4,6 +4,7 @@
 #include <vector>
 #include <GL/glew.h>
 
+#include "utils.h"
 
 struct ShaderProgramSource
 {
@@ -12,7 +13,7 @@ struct ShaderProgramSource
 };
 
 // Opengl Shader abstraction class
-class Shader
+class GLLITE_API Shader
 {
 public:
 	Shader(const std::string& vertexShader, const std::string& fragmentShader);

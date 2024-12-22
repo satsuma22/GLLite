@@ -2,50 +2,7 @@ cmake_minimum_required(VERSION 3.28)
 
 set(CMAKE_CXX_STANDARD 17)
 
-project(GLLite)
+set(BUILD_SHARED_LIB OFF CACHE BOOL "Enable shared libraries globally")
 
-link_directories(
-	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glew/lib/Release/x64/"
-	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glfw/lib-vc2022/"
-)
-
-set(GLLITE_SOURCES 
-	"src/main.cpp"
-	"src/window.cpp"
-	"src/vertexbuffer.cpp"
-	"src/vertexbufferlayout.cpp"
-	"src/vertexarray.cpp"
-	"src/shader.cpp"
-	"src/texture.cpp"
-)
-
-set(GLLITE_HEADERS
-	"src/window.h"
-	"src/vertexbuffer.h"
-	"src/vertexbufferlayout.h"
-	"src/vertexarray.h"
-	"src/shader.h"
-	"src/texture.h"
-)
-
-set(GLLITE_SHADERS
-	"src/glsl/basic.glvs"
-	"src/glsl/basic.glfs"
-)
-
-add_executable(GLLite ${GLLITE_SOURCES} ${GLLITE_HEADERS} ${GLLITE_SHADERS})
-
-target_include_directories(GLLite PRIVATE
-	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glew/include"
-	"${CMAKE_CURRENT_SOURCE_DIR}/3rd/glfw/include"
-)
-
-target_compile_definitions(GLLite PRIVATE
-	"GLEW_STATIC"
-)
-
-target_link_libraries(GLLite PRIVATE
-	"glew32s"
-	"glfw3"
-	"opengl32"
-)
+add_subdirectory(GLLite)
+add_subdirectory(examples)

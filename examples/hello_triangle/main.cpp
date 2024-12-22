@@ -13,9 +13,11 @@ int main()
 		 0.0f,  0.5f, 0.0f, 0.0f, 0.0f, 1.0f
 	};
 
-	Shader::ShaderDirectories.push_back("src/glsl/");
-	Shader::ShaderDirectories.push_back("../src/glsl/");
-	Shader::ShaderDirectories.push_back("../../src/glsl/");
+	Shader::ShaderDirectories.push_back("GLLite/glsl/");
+	Shader::ShaderDirectories.push_back("../GLLite/glsl/");
+	Shader::ShaderDirectories.push_back("../../GLLite/glsl/");
+	Shader::ShaderDirectories.push_back("../../../GLLite/glsl/");
+	Shader::ShaderDirectories.push_back("../../../../GLLite/glsl/");
 	
 	Shader shader("basic.glvs", "basic.glfs");
 

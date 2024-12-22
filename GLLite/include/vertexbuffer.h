@@ -3,8 +3,10 @@
 #include <GL/glew.h>
 #include <vector>
 
+#include "utils.h"
+
 // abstract class representing a vertex buffer in OpenGL
-class VertexBuffer
+class GLLITE_API VertexBuffer
 {
 public:
 	VertexBuffer(const void* data, unsigned int size);

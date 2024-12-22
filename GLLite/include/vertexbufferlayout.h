@@ -3,6 +3,8 @@
 #include <GL/glew.h>
 #include <vector>
 
+#include "utils.h"
+
 // struct representing an element in the vertex buffer layout
 struct VertexBufferElement
 {
@@ -22,7 +24,7 @@ struct VertexBufferElement
 };
 
 // abstract class representing a vertex buffer layout
-class VertexBufferLayout
+class GLLITE_API VertexBufferLayout
 {
 public:
 	VertexBufferLayout() : m_Stride(0) {}

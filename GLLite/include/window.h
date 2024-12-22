@@ -3,8 +3,10 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+#include "utils.h"
+
 // An abstract class that creates a window and initializes OPENGL
-class Window
+class GLLITE_API Window
 {
 public:
 	// Constructor
