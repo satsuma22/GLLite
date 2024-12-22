@@ -20,6 +20,7 @@ set(GLLITE_SOURCES
 	"src/shader.cpp"
 	"src/texture.cpp"
 	"src/indexarray.cpp"
+	"src/camera.cpp"
 )
 
 set(GLLITE_HEADERS
@@ -30,6 +31,7 @@ set(GLLITE_HEADERS
 	"include/shader.h"
 	"include/texture.h"
 	"include/indexarray.h"
+	"include/camera.h"
 	"include/utils.h"
 )
 
@@ -52,6 +54,7 @@ endif()
 target_include_directories(GLLite PUBLIC
 	"${CMAKE_SOURCE_DIR}/3rd/glew/include"
 	"${CMAKE_SOURCE_DIR}/3rd/glfw/include"
+	"${CMAKE_SOURCE_DIR}/3rd/glm/glm"
 	"${CMAKE_CURRENT_SOURCE_DIR}/include"
 )
 
