@@ -9,7 +9,7 @@ void VertexBufferLayout::Push(unsigned int count)
 }
 
 // specialization of the templated push function for floats
-template<>
+template<> GLLITE_API
 void VertexBufferLayout::Push<float>(unsigned int count)
 {
 	m_Elements.push_back({ GL_FLOAT, count, GL_FALSE });
@@ -17,7 +17,7 @@ void VertexBufferLayout::Push<float>(unsigned int count)
 }
 
 // specialization of the templated push function for unsigned ints
-template<>
+template<> GLLITE_API
 void VertexBufferLayout::Push<unsigned int>(unsigned int count)
 {
 	m_Elements.push_back({ GL_UNSIGNED_INT, count, GL_FALSE });
@@ -25,7 +25,7 @@ void VertexBufferLayout::Push<unsigned int>(unsigned int count)
 }
 
 // specialization of the templated push function for unsigned chars
-template<>
+template<> GLLITE_API
 void VertexBufferLayout::Push<unsigned char>(unsigned int count)
 {
 	m_Elements.push_back({ GL_UNSIGNED_BYTE, count, GL_TRUE });

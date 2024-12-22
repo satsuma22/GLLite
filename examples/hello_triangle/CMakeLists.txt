@@ -9,5 +9,8 @@ link_directories(
 
 add_executable(hello_triangle main.cpp)
 
-target_link_libraries(hello_triangle PRIVATE GLLite)
+if (${BUILD_SHARED_LIB})
+	target_compile_definitions(hello_triangle PRIVATE GLLITE_SHARED)
+endif()
 
+target_link_libraries(hello_triangle PRIVATE GLLite)
