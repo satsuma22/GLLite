@@ -17,8 +17,12 @@ struct ShaderProgramSource
 class GLLITE_API Shader
 {
 public:
+	Shader();
+	Shader(Shader&& other) noexcept;
 	Shader(const std::string& vertexShader, const std::string& fragmentShader);
 	~Shader();
+
+	Shader& operator=(Shader&& other) noexcept;
 
 	void Bind() const;
 	void Unbind() const;

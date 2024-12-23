@@ -9,3 +9,4 @@ message(STATUS "BUILD_SHARED_LIB=${BUILD_SHARED_LIB}")
 
 add_subdirectory(GLLite)
 add_subdirectory(examples)
+#add_subdirectory(apps)

@@ -6,16 +6,39 @@
 
 #include <gtc/type_ptr.hpp>
 
+Shader::Shader()
+	: m_ID(0)
+{
+}
+
+Shader::Shader(Shader&& other) noexcept
+{
+	m_ID = other.m_ID;
+	other.m_ID = 0;
+}
+
 Shader::Shader(const std::string& vertexShader, const std::string& fragmentShader)
 	: m_VSFilePath(vertexShader), m_FSFilePath(fragmentShader), m_ID(0)
 {
 	ShaderProgramSource source = ParseShader();
 	m_ID = CreateShader(source.VertexSource, source.FragmentSource);
+	Bind();
 }
 
 Shader::~Shader()
 {
 	glDeleteProgram(m_ID);
+}
+
+Shader& Shader::operator=(Shader&& other) noexcept
+{
+	if (this != &other)
+	{
+		m_ID = other.m_ID;
+		other.m_ID = 0;
+	}
+
+	return *this;
 }
 
 void Shader::Bind() const
@@ -28,7 +51,7 @@ void Shader::Unbind() const
 	glUseProgram(0);
 }
 
-void Shader::SetUniform1i(const std::string& name, int v)
+void Shader::SetUniform1i(const std::string& name, int v) 
 {
 	Bind();
 	int location = GetUniformLocation(name);
@@ -36,7 +59,7 @@ void Shader::SetUniform1i(const std::string& name, int v)
 	Unbind();
 }
 
-void Shader::SetUniform3f(const std::string& name, float v0, float v1, float v2)
+void Shader::SetUniform3f(const std::string& name, float v0, float v1, float v2) 
 {
 	Bind();
 	int location = GetUniformLocation(name);
