@@ -18,7 +18,7 @@ Camera::Camera(glm::vec3 pos, glm::vec3 dir, glm::vec3 worldup)
     m_Forward = dir;
     m_WorldUp = worldup;
 
-    m_Speed = 100.0f;
+    m_Speed = 10.0f;
     m_RotationSpeed = 1.0f;
     m_FOV = 75.0f;
     m_Height = 1080;
@@ -28,15 +28,6 @@ Camera::Camera(glm::vec3 pos, glm::vec3 dir, glm::vec3 worldup)
 
     Update();
     UpdateProjectionMatrix();
-}
-
-glm::vec3 Camera::GetProjectedPosition() const
-{
-    float t = -m_Position.y / (std::min(-0.25f, m_Forward.y));
-    glm::vec3 ProjectedPos = m_Position + t * m_Forward;
-    ProjectedPos.y = m_Position.y;
-
-    return ProjectedPos;
 }
 
 void Camera::MoveCamera(MovementType type, float delta)

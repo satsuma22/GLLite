@@ -47,6 +47,13 @@ int Window::GetHeight() const
 	return m_height;
 }
 
+
+// Get status of a key
+int Window::GetKey(int key) const
+{
+	return glfwGetKey(m_window, key);
+}
+
 // Initialize the window
 void Window::Init()
 {

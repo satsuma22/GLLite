@@ -3,10 +3,11 @@
 layout(location = 0) in vec3 in_position;
 layout(location = 1) in vec3 in_color;
 
+uniform mat4 u_MVP;
 out vec3 color_fs;
 
 void main()
 {
-	gl_Position = vec4(in_position, 1.0);
+	gl_Position = u_MVP * vec4(in_position, 1.0);
 	color_fs = in_color;
 }

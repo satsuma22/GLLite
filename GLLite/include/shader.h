@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <GL/glew.h>
+#include <glm.hpp>
 
 #include "utils.h"
 
@@ -24,6 +25,7 @@ public:
 	void SetUniform1i(const std::string& name, int v);
 	void SetUniform3f(const std::string& name, float v0, float v1, float v2);
 	void SetUniform4f(const std::string& name, float v0, float v1, float v2, float v3);
+	void SetUniformMat4f(const std::string& name, glm::mat4& mat);
 
 	static std::vector<std::string> ShaderDirectories;
 private:

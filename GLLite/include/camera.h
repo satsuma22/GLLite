@@ -29,7 +29,6 @@ public:
     inline const glm::mat4& GetProjectionMatrix() const { return m_Projection; }
 
     glm::vec3 GetPosition() const { return m_Position; }
-    glm::vec3 GetProjectedPosition() const;
 
     void MoveCamera(MovementType type, float delta);
 

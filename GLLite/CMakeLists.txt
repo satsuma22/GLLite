@@ -61,6 +61,7 @@ target_include_directories(GLLite PUBLIC
 
 target_compile_definitions(GLLite PUBLIC
 	"GLEW_STATIC"
+	"GLM_ENABLE_EXPERIMENTAL"
 )
 
 target_link_libraries(GLLite PUBLIC

@@ -23,6 +23,8 @@ public:
 	int GetWidth() const;
 	// Get the height of the window
 	int GetHeight() const;
+	// Get status of a key
+	int GetKey(int key) const;
 private:
 	// The width of the window
 	int m_width;

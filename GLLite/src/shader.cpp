@@ -4,6 +4,8 @@
 #include <fstream>
 #include <sstream>
 
+#include <gtc/type_ptr.hpp>
+
 Shader::Shader(const std::string& vertexShader, const std::string& fragmentShader)
 	: m_VSFilePath(vertexShader), m_FSFilePath(fragmentShader), m_ID(0)
 {
@@ -47,6 +49,14 @@ void Shader::SetUniform4f(const std::string& name, float v0, float v1, float v2,
 	Bind();
 	int location = GetUniformLocation(name);
 	glUniform4f(location, v0, v1, v2, v3);
+	Unbind();
+}
+
+void Shader::SetUniformMat4f(const std::string& name, glm::mat4& mat)
+{
+	Bind();
+	int location = GetUniformLocation(name);
+	glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(mat));
 	Unbind();
 }
 
