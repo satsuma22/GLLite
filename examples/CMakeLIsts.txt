@@ -1,3 +1,4 @@
 add_subdirectory(hello_triangle)
 add_subdirectory(hello_indexed_quad)
 add_subdirectory(hello_texture)
+add_subdirectory(image_renderer_demo)

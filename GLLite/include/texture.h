@@ -4,7 +4,9 @@
 #include <vector>
 #include <GL/glew.h>
 
-class Texture
+#include "utils.h"
+
+class GLLITE_API Texture
 {
 public:
 	Texture();

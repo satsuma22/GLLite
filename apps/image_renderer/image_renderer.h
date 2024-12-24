@@ -7,7 +7,7 @@
 #include "shader.h"
 #include "utils.h"
 
-class GLLITE_API ImageRenderer
+class ImageRenderer
 {
 public:
 	ImageRenderer();

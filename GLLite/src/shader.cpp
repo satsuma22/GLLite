@@ -93,14 +93,12 @@ ShaderProgramSource Shader::ParseShader() const
 	for (auto& directory : ShaderDirectories)
 	{
 		VSFile.open(directory + m_VSFilePath);
-		std::cout << "Trying to open " << directory + m_VSFilePath << std::endl;
 		if (VSFile.is_open()) break;
 	}
 
 	if (!VSFile.is_open())
 	{
 		std::cout << "Could not find Shader Source in " << m_VSFilePath << std::endl;
-		//std::cin.get();
 		exit(-1);
 	}
 

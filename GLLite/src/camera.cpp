@@ -4,6 +4,7 @@
 #include <gtx/quaternion.hpp>
 
 #include <algorithm>
+#include <iostream>
 
 Camera::Camera()
     : m_View(0), m_Projection(0), m_Position(0), m_Forward(0), m_Right(0), m_Up(0), m_WorldUp(0),
